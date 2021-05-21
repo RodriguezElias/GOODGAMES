@@ -152,9 +152,9 @@ const printCart = () =>{
     if(Object.keys(cart).length > 0){
     cart_list_empty.innerHTML='';
     const button_empty_cart = document.createElement('button');
-        button_empty_cart.classList.add('btn-empty');
+        button_empty_cart.classList.add('button');
         button_empty_cart.id = 'btn-empty';
-        button_empty_cart.textContent = "Empty";
+        button_empty_cart.textContent = "Empty cart";
         cart_list.appendChild(button_empty_cart);
 
     //agregar evento vaciar carrito

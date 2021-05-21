@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.border-bottom{
+    border-bottom: 1px solid $color-a ;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.wrapper{
+    padding: 10px 10px;
+}
+.margin-0{
+    margin: 0;
+}
+
+.button{
+    border-radius: 1.5em;
+    width: 250px;
+    align-self: center;
+    padding: 0.7em 1.87em;
+    border:none;
+    cursor: pointer;
+    background:$color-a;
+    color: #edf1f2;
+    font-weight: bolder;
+    font-size: 1rem;
+    i{
+        margin-left: 10px;
+    }
+}
+
+input[type=radio] {
+    border: 1px solid rgba(#fff, 0.67);
+    padding: 0.7rem;
+    -webkit-appearance: none;
+  }
+  
+  input[type=radio]:checked {
+    background:#8739F9;
+    background-size: 10px 10px;
+  }
+  
