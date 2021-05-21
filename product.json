@@ -1,0 +1,62 @@
+[
+	{
+		
+		"name": "Joystick XBOX ONE - BLACK",
+		"price": 8700,
+        "description": "Microsoft Wireless Joystick - Black Edition",
+        "console": "xbox one",
+        "relevant": false,
+        "image": "/img/joystick-xboxBlack-removebg-preview.png",
+		"id": 1
+	},
+	{
+		
+		"name": "Joystick XBOX ONE - CYBERPUNK 2077 EDITION",
+		"price": 15500,
+        "description": "Microsoft Wireless Joystick - Cyberpunk 2077 Limited Edition",
+        "console": "xbox one",
+        "relevant": true,
+        "image": "/img/joystick-cyberpunk-removebg-preview.png",
+		"id": 2
+	},
+	{
+		
+		"name": "Joystick XBOX ONE - VOLCANO SHADOW EDITION",
+		"price": 13500,
+        "description": "Microsoft Wireless Joystick - Volcano Shadow Special Edition",
+        "console": "xbox one",
+        "relevant": true,
+        "image": "/img/joystick-volcane-removebg-preview.png",
+		"id": 3
+	},
+	{
+		
+		"name": "Joystick PLAYSTATION 4 - BLACK",
+		"price": 10999,
+        "description": "Wireless Joystick Sony Dualshock 4",
+        "console": "playstation 4",
+        "relevant": false,
+        "image": "/img/joystick_ps4_black.png",
+		"id": 4
+	},
+	{
+		
+		"name": "Joystick PLAYSTATION 4 - 20th ANNIVERSARY EDITION",
+		"price": 11999,
+        "description": "Wireless Joystick Sony Dualshock 4",
+        "console": "playstation 4",
+        "relevant": true,
+        "image": "/img/joystick_ps4_20th anniversary.png",
+		"id": 5
+	},
+	{
+		
+		"name": "Joystick PLAYSTATION 4 - BERRY BLUE",
+		"price": 10999,
+        "description": "Wireless Joystick Sony Dualshock 4",
+        "console": "playstation 4",
+        "relevant": true,
+        "image": "/img/joystick_ps4_berryblue.png",
+		"id": 6
+	}
+]

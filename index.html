@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GOOD GAMES</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-main">
+        <div class="container-left wrapper">
+            <div class="container-avatar">
+                <img src="img/Logo_Mediax_new.png" alt="logo" class="img-logo"/>
+            </div>
+            <div class="container-console">
+                    <p class="border-bottom">Console</p>
+                    <div class="radio-sort">
+                        <div class="sort-all">
+                            <input type="radio" name="sort" id="sort-all">
+                            <label for="all">All</label>
+                        </div>
+                        <div class="sort-xbox">
+                            <input type="radio" name="sort" id="sort-xbox">
+                            <label for="xbox">Xbox</label>
+                        </div>
+                        <div class="sort-playstation">
+                            <input type="radio" name="sort" id="sort-playstation">
+                            <label >Playstation</label>
+                        </div>
+                        <div class="sort-nintendo">
+                            <input type="radio" name="sort" id="sort-nintendo">
+                            <label >Nintendo</label>
+                        </div>
+                    </div>
+            </div>
+            <div class="container-sortBy">
+                    <p class="border-bottom">Sort By</p>
+                    <div class="radio-sort">
+                        <div class="sort-price">
+                            <input type="radio" name="sort2" id="sort-price">
+                            <label for="price">Price</label>
+                        </div>
+                        <div class="sort-alphabet">
+                            <input type="radio" name="sort2" id="sort-alphabet">
+                            <label for="alphabet">A-Z</label>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+        <div class="container-right wrapper ">
+            <div class="container-header">
+                <div class="header-nav">
+                    <div class="input-search">
+                        <a class="icon" id="icon-search"><i class="fa fa-search"></i></a>
+                        <input type="text" name="search" id="search" placeholder="Search..">
+                    </div>
+                    <div class="container-menu">
+                        <div class="menu-bar">
+                            <a href="#" class="burger-button"><i class="fas fa-bars fa-2x"></i></a>
+                        </div>
+                        <div class="nav">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Payment</a></li>
+                                <li><a href="#">Catalogue</a></li>
+                                <li><a href="#">About</a></li>
+                            </ul> 
+                        </div>
+                        <div class="cart">
+                            <a href="#" class="cart-button"><i class="fas fa-shopping-cart fa-2x"></i></a>
+                        </div>   
+                    </div>
+                    <div class="menu-cart" id="menu-cart">
+                        <button title="Close" class="close-cart"><i class="fas fa-times fa-3x"></i></button>
+                        <h2>Your cart:</h2>
+                        <div id="cart-list" class="cart-list">
+                            <div></div>
+                            <p id="empty">The shopping cart is empty</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-info ">
+                    <div class="container-slogan">
+                        <span class="text-1">Online store</span> <span class="text-2">create your</span> <span class="text-3">character</span>
+                    </div>
+                    <div class="img-info">
+                        <img src="/img/mando_xbox-removebg.png" alt="joystick">
+                    </div>
+                </div>
+            </div>
+            <div class="container-product" id="container-product">
+            </div>
+        </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+</html>
