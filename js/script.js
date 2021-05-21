@@ -361,18 +361,26 @@ const printCountPurchase = () => {
 // funciones para ordenar productos-----------------------------------
 const sortAll = ()=>{
     printProductOrder(Productos);
+    sort_by_price.checked = false;
+    sort_by_alphabet.checked = false;
 };
 const sortXbox = ()=>{
     orderly = Productos.filter(prod => prod.console == "xbox one")
     printProductOrder(orderly);
+    sort_by_price.checked = false;
+    sort_by_alphabet.checked = false;
 };
 const sortPlaystation = ()=>{
     orderly = Productos.filter(prod => prod.console == "playstation 4")
     printProductOrder(orderly);
+    sort_by_price.checked = false;
+    sort_by_alphabet.checked = false;
 };
 const sortNintendo = ()=>{
     orderly = Productos.filter(prod => prod.console == "nintendo")
     printProductOrder(orderly);
+    sort_by_price.checked = false;
+    sort_by_alphabet.checked = false;
 };
 
 const sortByPrice = ()=>{
@@ -400,6 +408,31 @@ const sortByPrice = ()=>{
         printProductOrder(orderly); 
     }
 };
+const sortByAlphabet = ()=>{
+    if (sort_xbox.checked || sort_playstation.checked ) {
+        orderly = orderly.sort((a,b) => {
+            if (a.name < b.name) {
+                return -1;
+                }
+                if (a.name > b.name) {
+                    return 1;
+                }
+                    return 0
+                })
+        printProductOrder(orderly); 
+    }else{
+        orderly = Productos.sort((a,b) => {
+            if (a.name < b.name) {
+                return -1;
+                }
+                if (a.name > b.name) {
+                    return 1;
+                }
+                    return 0
+                })
+        printProductOrder(orderly); 
+    }
+};
 
 const sort_all = document.querySelector('#sort-all');
 sort_all.addEventListener('change', sortAll);
@@ -411,6 +444,8 @@ const sort_nintendo = document.querySelector('#sort-nintendo');
 sort_nintendo.addEventListener('change', sortNintendo);
 const sort_by_price = document.querySelector('#sort-price');
 sort_by_price.addEventListener('change', sortByPrice);
+const sort_by_alphabet = document.querySelector('#sort-alphabet');
+sort_by_alphabet.addEventListener('change', sortByAlphabet);
 
 
 
@@ -471,7 +506,6 @@ const printProductOrder = (products)=>{
         });
     $('#container-product').fadeIn();   
 };
-
 
 
 
