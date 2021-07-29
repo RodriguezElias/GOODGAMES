@@ -26,11 +26,14 @@ const printProduct = (products)=>{
         name_product.textContent = `${prod.name}`
         card_info.appendChild(name_product);
         
+        let container_price = document.createElement('div');
+        container_price.classList.add('container-price');
         let price_product = document.createElement('p');
         price_product.id = 'price-product';
         price_product.classList.add('price', 'margin-0');
-        price_product.textContent = `$${prod.price}`
-        card_info.appendChild(price_product);
+        price_product.textContent = `${prod.price}`
+        container_price.appendChild(price_product);
+        card_info.appendChild(container_price);
         
         
         let button_buy = document.createElement('button');

@@ -10,48 +10,42 @@ let Productos;
 let count = 0;
 let orderly = [];
 
-$(function() {
-    if(localStorage.getItem('cart')){
-        cart = JSON.parse(localStorage.getItem('cart'));
-        printCart();
-        count = localStorage.getItem('count');
-        printCountPurchase();
-    }
-    else{
-        console.log('no hay Productos');
-    }
-
-    
-
-
-    $.ajax({
-        url: '../product.json',
-        dataType: 'json',
-        success: function(data){
-            Productos = data;
-            printProduct(Productos);
-
-        }
-    })
-        .fail((jqXHR, textStatus, errorThrown) =>{
-            console.log(errorThrown);
-        })
-
-
+document.addEventListener('DOMContentLoaded',() => {
+   //extraer los productos del carrito del localStorage
+   if(localStorage.getItem('cart')){
+    cart = JSON.parse(localStorage.getItem('cart'));
+    printCart();
+    count = localStorage.getItem('count');
+    printCountPurchase();
+  }
+  else{
+    console.log('no hay Productos');
+  }
+  fetchData()
+  
 })
+const fetchData = async () =>{
+  try{
+    const res = await fetch('../product.json')
+    const data = await res.json()
+    Productos = data
+    printProduct(Productos);
+  } catch(error){
+    console.log(error)
+  }
+}
 
-
-//Selectores
+//Selectores de elementos------------------------------------------------
 const cart_list = document.querySelector('#cart-list div');
 const cart_list_empty = document.querySelector('#empty');
 const container_product = document.querySelector('#container-product');
 const icon_search = document.querySelector('#icon-search');
 const input_search = document.querySelector('#search');
-const close_cart = document.querySelector('.close-cart');
+const close_cart = document.querySelector('.back-cross');
 const cart_button = document.querySelector('.cart');
 
 
-//LISTENERS
+// funciones para filtrar productos, con Key ENTER y con icono lupa
 const filterEnter = (e) => {
     if(e.key === 'Enter'){
         const search = input_search.value.toLowerCase();
@@ -72,25 +66,40 @@ const filterIcon = () => {
     
 }
 
+//LISTENERS
 icon_search.addEventListener('click', filterIcon);
 input_search.addEventListener('keypress', filterEnter);
 close_cart.addEventListener('click', closeCart);
+
+
+
 container_product.addEventListener('click', e => {
     addCart(e);
+    modalFuncion(e);
 });
 
 
+
+//funcion para agregar productos al carrito
 const addCart = e => {
     if(e.target.classList.contains('button-buy')){
         setCart(e.target.parentElement.parentElement);
-        addCountPurchase();
+        addCountPurchase(e);
     }
-    
 }
-
-
+//modal de agregar producto al carrito
+const modalFuncion = (e) => {
+  if(e.target.classList.contains('button-buy')){
+    const modal_container = document.querySelector('#modal_container')
+    const eliminarModal = ()=>{
+      modal_container.classList.remove('show')
+    }
+    modal_container.classList.add('show')
+    setTimeout(eliminarModal, 1500)
+  }
+}
+//seteamos los elementos para enviarlos al carrito
 const setCart = obj =>{
-    //console.log(obj);
     const product = {
         id: obj.querySelector('.button-buy').dataset.id,
         title: obj.querySelector('#name-product').textContent,
@@ -99,8 +108,14 @@ const setCart = obj =>{
         img: obj.querySelector('img').getAttribute('src'),
         amount: 1,
     }
-    if(cart.hasOwnProperty(product.id)){ //pregunta si esta esa propiedad con la key
+
+     
+    //si existe un articulo con ese id actualiza la cantidad y el precio
+    const numberPrice = Number(obj.querySelector('#price-product').textContent)
+    if(cart.hasOwnProperty(product.id)){ 
         product.amount = cart[product.id].amount + 1;
+        product.price = product.amount * numberPrice
+        console.log(product.price);
     }
     cart[product.id] = {...product};
     printCart();
@@ -113,42 +128,57 @@ const printCart = () =>{
     cart_list.innerHTML = '';
 
     Object.values(cart).forEach(prod => {
+      //Etiqueta contenedora del articulo----------------------------------------
         const container_article = document.createElement('div');
-
+        container_article.classList.add('container-article')
+      //Etiqueta contenedora de la imagen del articulo---------------------------
         const article_img = document.createElement('div');
-        article_img.classList.add('article_img');
+        article_img.classList.add('article-img');
         const img = document.createElement('img');
         img.src = prod.img;
         article_img.appendChild(img);
-        
-        container_article.appendChild(article_img);
-        container_article.classList.add('container_article')
-
+      //Etiqueta contenedora de informacion del articulo-------------------------
         const article_info = document.createElement('div');
-        article_info.classList.add('article_info');
-
+        article_info.classList.add('article-info');
         const article_name = document.createElement('p');
         article_name.textContent = `${prod.title}`
         article_info.appendChild(article_name);
 
         const article_price = document.createElement('p');
-        article_price.textContent = prod.price;
+        article_price.textContent = `PRECIO:   ${prod.price}`;
         article_info.appendChild(article_price);
 
         const article_amount = document.createElement('p');
+        article_amount.textContent = ` CANTIDAD:   ${prod.amount}`;
         article_info.appendChild(article_amount);
-        article_amount.textContent = `${prod.amount}`;
-
+        
+        //etiqueta contenedora de icono eliminar todos los productos del mismo tipo
+        const remove_product = document.createElement('div');
+        remove_product.classList.add('remove-product');
+        let remove_button = document.createElement('button');
+        remove_button.setAttribute('title','Remove article')
+        remove_button.classList.add('back-cross');
+        remove_button.dataset.id = `${prod.id}`
+        let remove_icon = document.createElement('i');
+        remove_icon.classList.add('fas', 'fa-times', 'fa-2x');
+        remove_icon.id = 'remove-cross'
+        remove_button.appendChild(remove_icon);
+        remove_product.appendChild(remove_button)
+        container_article.addEventListener('click',(e)=>{
+          removeCartArticle(e)
+        })
+        
+        //adjuntamos los elementos hijos al elemento padre
+        container_article.appendChild(article_img);
         container_article.appendChild(article_info);
-
+        container_article.appendChild(remove_product)
         cart_list.appendChild(container_article);
-
+        
         //guardar los productos en localstorage
         localStorage.setItem('cart', JSON.stringify(cart));
-
     })
 
-    // crear boton vaciar carrito si hay procuctos
+    // crear boton vaciar carrito solo si hay productos
     if(Object.keys(cart).length > 0){
     cart_list_empty.innerHTML='';
     const button_empty_cart = document.createElement('button');
@@ -157,7 +187,7 @@ const printCart = () =>{
         button_empty_cart.textContent = "Empty cart";
         cart_list.appendChild(button_empty_cart);
 
-    //agregar evento vaciar carrito
+    // evento vaciar carrito
     const empty_cart = document.querySelector('#btn-empty');
     empty_cart.addEventListener('click', () => {
         cart = {};
@@ -169,11 +199,23 @@ const printCart = () =>{
     } else {
         cart_list_empty.innerHTML = `<p id="empty">The shopping cart is empty</p>`;
     }
-
 }
 
-//contador del carrito de compras--------------------------------------------------------
+//funcion eliminar productos del mismo elemento
+const removeCartArticle = (e)=>{
+  if(e.target.id == "remove-cross"){
+    const article = cart[e.target.parentElement.dataset.id]
+    count -= article.amount
+    localStorage.setItem('count', count);
+    delete cart[e.target.parentElement.dataset.id]
+    localStorage.setItem('cart', JSON.stringify(cart));
+    printCart();
+    printCountPurchase();
+  }
+  
+} 
 
+//contador del carrito de compras--------------------------------------------------------
 let number = document.createElement('span');
     number.classList.add('number');
 const addCountPurchase = ()=>{
@@ -184,16 +226,13 @@ const addCountPurchase = ()=>{
 const removeAllCountPurchase = () => {
     count = 0;
     localStorage.setItem('count', count);
-    printCountPurchase();
-    
+    printCountPurchase(); 
 }
 
 const printCountPurchase = () => {
     number.textContent = count;
     cart_button.appendChild(number);   
 }
-
-
 
 // funciones para ordenar productos-----------------------------------
 const sortAll = ()=>{
