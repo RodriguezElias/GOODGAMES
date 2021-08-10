@@ -37,7 +37,7 @@ const printProduct = (products)=>{
         
         
         let button_buy = document.createElement('button');
-        button_buy.classList.add('button-buy');
+        button_buy.classList.add('button-buy','shadow-button');
         button_buy.textContent = "Add to cart";
         button_buy.dataset.id = prod.id;
         let icon_cart = document.createElement('i');

@@ -1,6 +1,7 @@
-body{
-    margin: 0;
-    padding: 0;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .border-bottom{
@@ -26,9 +27,6 @@ body{
     color: #edf1f2;
     font-weight: bolder;
     font-size: 1rem;
-    i{
-        margin-left: 10px;
-    }
 }
 
 input[type=radio] {
@@ -42,10 +40,21 @@ input[type=radio] {
     background-size: 10px 10px;
   }
 
-.back-cross{
+.remove-back-button{
     border: none;
     background: none;
     cursor: pointer;
-    color: white;
+    color: $color-a;
+    
+}
+.remove-back-button:active{
+  box-shadow: -1px -1px 3px 0px;
+}
+.shadow-button{
+  box-shadow: 3px 3px #999;
+}
+.shadow-button:active{
+  box-shadow: 1px 2px #777;
+  transform: translateX(4px);
 }
   
