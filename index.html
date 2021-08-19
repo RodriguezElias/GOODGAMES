@@ -21,50 +21,16 @@
 
   <body>
     <div class="container-main">
-      <div class="container-left wrapper">
-        <div class="container-avatar">
-          <img src="img/GOOD_GAMES.png" alt="logo" class="img-logo" />
-        </div>
-        <div class="container-console">
-          <p class="border-bottom">Console</p>
-          <div class="radio-sort">
-            <div class="sort-all">
-              <input type="radio" name="sort" id="sort-all" />
-              <label for="all">All</label>
-            </div>
-            <div class="sort-xbox">
-              <input type="radio" name="sort" id="sort-xbox" />
-              <label for="xbox">Xbox</label>
-            </div>
-            <div class="sort-playstation">
-              <input type="radio" name="sort" id="sort-playstation" />
-              <label>Playstation</label>
-            </div>
-            <div class="sort-nintendo">
-              <input type="radio" name="sort" id="sort-nintendo" />
-              <label>Nintendo</label>
-            </div>
-          </div>
-        </div>
-        <div class="container-sortBy">
-          <p class="border-bottom">Sort By</p>
-          <div class="radio-sort">
-            <div class="sort-price">
-              <input type="radio" name="sort2" id="sort-price" />
-              <label for="price">Price</label>
-            </div>
-            <div class="sort-alphabet">
-              <input type="radio" name="sort2" id="sort-alphabet" />
-              <label for="alphabet">A-Z</label>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="container-right wrapper">
         <div class="container-header">
           <div class="header-nav">
+            <div class="container-avatar">
+              <img src="img/GOOD_GAMES.png" alt="logo" class="img-logo" />
+            </div>
             <div class="input-search">
-              <a class="icon" id="icon-search"><i class="fa fa-search"></i></a>
+              <a class="icon" id="icon-search">
+                <i class="fa fa-search"></i>
+              </a>
               <input
                 type="text"
                 name="search"
@@ -114,6 +80,42 @@
             </div>
           </div>
         </div>
+        <div class="container-filter">
+          <div class="container-console">
+            <p class="border-bottom filter">Console</p>
+            <div class="radio-sort">
+              <div class="sort-all">
+                <input type="radio" name="sort" id="sort-all" />
+                <label for="all">All</label>
+              </div>
+              <div class="sort-xbox">
+                <input type="radio" name="sort" id="sort-xbox" />
+                <label for="xbox">Xbox</label>
+              </div>
+              <div class="sort-playstation">
+                <input type="radio" name="sort" id="sort-playstation" />
+                <label>Playstation</label>
+              </div>
+              <div class="sort-nintendo">
+                <input type="radio" name="sort" id="sort-nintendo" />
+                <label>Nintendo</label>
+              </div>
+            </div>
+          </div>
+          <div class="container-sortBy">
+            <p class="border-bottom filter">Sort By</p>
+            <div class="radio-sort">
+              <div class="sort-price">
+                <input type="radio" name="sort2" id="sort-price" />
+                <label for="price">Price</label>
+              </div>
+              <div class="sort-alphabet">
+                <input type="radio" name="sort2" id="sort-alphabet" />
+                <label for="alphabet">A-Z</label>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="container-product" id="container-product"></div>
       </div>
       <div class="modal-container" id="modal_container">
@@ -121,6 +123,63 @@
           <p>Se agrego un producto al carrito</p>
         </div>
       </div>
+    </div>
+    <div class="footer">
+      <div class="footer-logo">
+        <img src="img/GOOD_GAMES.png" alt="footer-logo" class="img-footer-logo">
+      </div>
+      <div class="follow-us">
+        <ul class="container-social">
+          <li><a href="https://www.linkedin.com/in/leandroeliasrodriguez/" class="linkedin"><i class="fab fa-linkedin fa-2x"></i></a></li>
+          <li><a href="https://github.com/RodriguezElias" class="github"><i class="fab fa-github fa-2x"></i></a></li>
+          <li><a href="#" class="facebook"><i class="fab fa-facebook fa-2x"></i></a></li>
+          <li><a href="#" class="instagram"><i class="fab fa-instagram fa-2x"></i></a></li>
+          <li><a href="#" class="youtube"><i class="fab fa-youtube fa-2x"></i></a></li>
+          <li><a href="#" class="twitter"><i class="fab fa-twitter fa-2x"></i></a></li>
+          <li><a href="#" class="twitch"><i class="fab fa-twitch fa-2x"></i></a></li>
+        </ul>
+      </div>
+      <div class="footer-menu">
+        <div class="container-list">
+          <ul class="list">
+            <li class="item" >
+              <button class="remove-back-button " id="item">SUPPORT <i class="fas fa-caret-down"></i></button>
+              <ul class="drop-down">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="">Warranty</a></li>
+                <li><a href="">Returns</a></li>
+                <li><a href="">Shipping</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="container-list">
+          <ul class="list">
+            <li class="item" >
+              <button class="remove-back-button " id="item">PRIVACY & TERMS <i class="fas fa-caret-down"></i></button>
+              <ul class="drop-down">
+                <li><a href="">Terms & Conditions</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Cookies Settings</a></li>
+                <li><a href="">Legal Notice</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="container-list">
+          <ul class="list">
+            <li class="item" >
+              <button class="remove-back-button " id="item">CONTACT<i class="fas fa-caret-down"></i></button>
+              <ul class="drop-down">
+                <li><a href=""><i class="fas fa-home"></i> CABA, riestra 5030, Ar</a></li>
+                <li><a href="mailto:rodriguezelias@hotmail.es"> <i class="far fa-envelope"></i> goodgames@hotmail.com</a></li>
+                <li><a href=""> <i class="fas fa-phone"></i> + 01 234 567 88</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

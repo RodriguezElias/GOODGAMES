@@ -1,0 +1,92 @@
+.footer {
+  width: 100%;
+  background-color: $color-secondary;
+  .footer-logo {
+    text-align: center;
+    border-bottom: 1px solid $color-fonts3;
+    .img-footer-logo {
+      width: 8rem;
+      height: 7rem;
+    }
+  }
+  .follow-us {
+    width: 100%;
+    border-bottom: 1px solid $color-fonts3;
+    .container-social {
+      width: 100%;
+      padding: 20px 0;
+      list-style: none;
+      display: flex;
+      justify-content: space-evenly;
+
+      li {
+        border-bottom: none;
+        margin: 0;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        a {
+          padding: 0 10px;
+          color: $color-fonts2;
+        }
+      }
+    }
+  }
+  .linkedin :hover{
+    color: $linkedin;
+  }
+  .github :hover{
+    color: $color-fonts1;
+  }
+  .facebook :hover{
+    color: $facebook;
+  }
+  .instagram :hover{
+    color: $instagram;
+  }
+  
+  .youtube :hover{
+    color: red;
+  }
+  .twitter :hover{
+    color: $twitter;
+  }
+  .twitch :hover{
+    color: $color-fourth;
+  }
+
+  .container-list{
+    border-bottom: 1px solid $color-fonts3;
+    .list{
+      font-size: 1.4rem;
+      padding: 20px;
+      list-style: none;
+      color: $color-fonts2;
+      .item{
+        button{
+        width: 100%;
+        text-align: start;
+        font-size: 1.4rem;
+        color: $color-fonts2;
+        }
+        .drop-down{
+          font-size: 1.1rem;
+          padding: 10px;
+          list-style: none;
+          display: none;
+          li{
+            margin: 10px 0;
+            a{
+              color: $color-fonts3;
+              text-decoration: none;
+            }
+          }
+
+        }
+      }
+    }
+  }
+  .open-list{
+    display: block !important;
+  }
+}

@@ -1,7 +1,8 @@
-$(document).ready(menu_bar);
+//funciones para abrir y cerrar el carrito y el menu hamburguesa
+$(document).ready(openCart);
 $(document).ready(menu_cart_f);
 let count_menu_bar = 1;
-function menu_bar(){
+function openCart(){
     $('.menu-bar').click(function(){
         //$('.nav').toggle();
         if(count_menu_bar == 1){
@@ -19,6 +20,11 @@ function menu_bar(){
 
     });
 }
+const closeCart = () =>{
+  const menu_cart = document.querySelector('.menu-cart');
+  menu_cart.style.right = '-100%';
+
+};
 
 function menu_cart_f(){
     $('.cart').click(function(){
@@ -29,6 +35,17 @@ function menu_cart_f(){
             
     });
 }
+const item = document.querySelectorAll("#item");
+const dropDown = (e) =>{
+  const drop = e.target.nextElementSibling
+  drop.classList.toggle("open-list")
+}
+item.forEach(item =>{
+  item.addEventListener("click", (e)=>{
+    dropDown(e)
+  })
+})
 
-export {menu_bar, menu_cart_f};
+
+export {openCart,closeCart, menu_cart_f, dropDown};
 

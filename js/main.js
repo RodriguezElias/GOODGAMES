@@ -1,6 +1,6 @@
 //import functions
-import { printProduct, closeCart } from "./utils.js";
-import { menu_bar, menu_cart_f } from "./function_button.js";
+import { printProduct } from "./utils.js";
+import { openCart,closeCart, menu_cart_f,dropDown } from "./function_button.js";
 
 // crear el objeto carrito
 let cart = {};
@@ -299,7 +299,7 @@ const sortNintendo = () => {
 };
 
 const sortByPrice = () => {
-  if (sort_xbox.checked || sort_playstation.checked) {
+  if (sort_xbox.checked || sort_playstation.checked || sort_nintendo.checked) {
     orderly = orderly.sort((a, b) => {
       if (a.price < b.price) {
         return -1;
@@ -324,7 +324,7 @@ const sortByPrice = () => {
   }
 };
 const sortByAlphabet = () => {
-  if (sort_xbox.checked || sort_playstation.checked) {
+  if (sort_xbox.checked || sort_playstation.checked ||sort_nintendo.checked) {
     orderly = orderly.sort((a, b) => {
       if (a.name < b.name) {
         return -1;

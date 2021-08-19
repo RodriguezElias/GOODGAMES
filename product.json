@@ -9,6 +9,16 @@
         "image": "/img/joystick-xboxBlack-removebg-preview.png",
 		"id": 1
 	},
+  {
+		
+		"name": "JOYSTICK NINTENDO SWITCH - BLACK",
+		"price": 25000,
+        "description": "Nintendo Wireless Joystick - Black Edition",
+        "console": "nintendo",
+        "relevant": false,
+        "image": "/img/joystick-switch-3-removebg-preview.png",
+		"id": 2
+	},
 	{
 		
 		"name": "JOYSTICK XBOX ONE - CYBERPUNK 2077 EDITION",
@@ -17,7 +27,7 @@
         "console": "xbox one",
         "relevant": true,
         "image": "/img/joystick-cyberpunk-removebg-preview.png",
-		"id": 2
+		"id": 3
 	},
 	{
 		
@@ -27,7 +37,7 @@
         "console": "xbox one",
         "relevant": true,
         "image": "/img/joystick-volcane-removebg-preview.png",
-		"id": 3
+		"id": 4
 	},
 	{
 		
@@ -37,7 +47,17 @@
         "console": "playstation 4",
         "relevant": false,
         "image": "/img/joystick_ps4_black.png",
-		"id": 4
+		"id": 5
+	},
+  {
+		
+		"name": "JOY-CON NINTENDO SWITCH - BLUE/YELLOW",
+		"price": 15000,
+        "description": "Nintendo Wireless Joystick - Standar Edition",
+        "console": "nintendo",
+        "relevant": false,
+        "image": "/img/joystick-switch-2-removebg-preview.png",
+		"id": 6
 	},
 	{
 		
@@ -47,7 +67,7 @@
         "console": "playstation 4",
         "relevant": true,
         "image": "/img/joystick_ps4_20th anniversary.png",
-		"id": 5
+		"id": 7
 	},
 	{
 		
@@ -57,6 +77,17 @@
         "console": "playstation 4",
         "relevant": true,
         "image": "/img/joystick_ps4_berryblue.png",
-		"id": 6
+		"id": 8
+	},
+  {
+		
+		"name": "JOY-CON NINTENDO SWITCH - BLUE/RED",
+		"price": 15000,
+        "description": "Nintendo Wireless Joystick - Standar Edition",
+        "console": "nintendo",
+        "relevant": false,
+        "image": "/img/joystick-switch-removebg-preview.png",
+		"id": 9
 	}
+  
 ]

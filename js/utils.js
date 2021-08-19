@@ -50,12 +50,8 @@ const printProduct = (products)=>{
         });
     $('#container-product').fadeIn();   
 };
-const closeCart = () =>{
-    const menu_cart = document.querySelector('.menu-cart');
-    menu_cart.style.right = '-100%';
-
-};
 
 
-export {printProduct,closeCart};
+
+export {printProduct};
 
