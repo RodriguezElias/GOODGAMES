@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 const fetchData = async () => {
   try {
-    const res = await fetch("../product.json");
+    const res = await fetch("product/product.json");
     const data = await res.json();
     Productos = data;
     printProduct(Productos);
