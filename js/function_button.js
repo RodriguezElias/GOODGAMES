@@ -12,7 +12,6 @@ function openCart(){
             count_menu_bar = 0;
         } else{
             count_menu_bar = 1;
-            console.log(count_menu_bar)
             $('.nav').animate({
                 left: '-100%'
             });

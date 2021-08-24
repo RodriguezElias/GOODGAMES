@@ -1,0 +1,123 @@
+.container-main {
+  min-height: 100vh;
+  .container-right {
+    background-color: $color-secondary;
+    .container-filter {
+      width: 100%;
+      color: $color-fonts2;
+      font-family: "Oswald", sans-serif;
+      .container-console {
+        width: 100%;
+        .filter {
+          color: $color-fonts1;
+          font-size: 1.5rem;
+        }
+        .radio-sort {
+          margin: 15px 0px;
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+      .container-sortBy {
+        width: 100%;
+        .filter {
+          color: $color-fonts1;
+          font-size: 1.5rem;
+        }
+        .radio-sort {
+          margin: 15px 0px;
+          display: flex;
+          justify-content: space-evenly;
+        }
+      }
+    }
+  
+    .container-product {
+      display: grid;
+      grid-row-gap: 10px;
+  
+      .container-card {
+        border: 3px solid $color-a;
+        border-radius: 5px;
+  
+        .card-img {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+          .img-title {
+            text-align: center;
+            color: #edf1f2;
+            font-size: 24px;
+            font-weight: bolder;
+            font-family: "Oswald", sans-serif;
+            display: none;
+          }
+        }
+  
+        .card-info {
+          background-color: $color-c;
+          font-family: "Nunito", sans-serif;
+          font-weight: 700;
+          height: 180px;
+          padding: 10px 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          .container-price {
+            display: flex;
+            align-items: flex-end;
+            font-size: 1.5rem;
+            font-weight: bolder;
+            color: $color-fonts1;
+  
+            .price {
+              font-size: 1.5rem;
+              font-weight: bolder;
+              color: $color-fonts1;
+            }
+            .price::before {
+              content: "";
+              background: $color-a;
+              display: block;
+              width: 100%;
+              height: 5px;
+              margin: 0.5rem 0px;
+            }
+          }
+          .container-price::before {
+            content: "$";
+          }
+          .info {
+            color: $color-fonts1;
+            font-size: 1.2rem;
+          }
+          .button-buy {
+            border-radius: 1.5em;
+            width: 250px;
+            align-self: center;
+            padding: 0.7em 1.87em;
+            border: none;
+            cursor: pointer;
+            background: $color-a;
+            color: #edf1f2;
+            font-weight: bolder;
+            font-size: 1rem;
+            i {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+    .card-img img {
+      width: 100%;
+      height: 250px;
+      vertical-align: top;
+    }
+    .card-img h2 {
+      position: absolute;
+      top: 140px;
+    }
+  }
+}
+
